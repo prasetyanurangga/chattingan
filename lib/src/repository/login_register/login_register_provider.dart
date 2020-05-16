@@ -13,7 +13,7 @@ class LoginRegisterProvider {
   ApiProvider apiProvider;
 
   Future<Map<String, dynamic>> login(String email, String password) async {
-    print(Uri.encodeFull(('$baseUrl/login_register')));
+    print(Uri.encodeFull(('$baseUrl/login')));
     try {
       final String data = json.encode({'email': email, 'password': password});
       var response = await apiProvider.post('$baseUrl/login', data);

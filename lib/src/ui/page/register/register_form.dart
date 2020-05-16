@@ -106,6 +106,7 @@ class _RegisterFormState extends State<RegisterForm> {
     return BlocListener<LoginRegisterBloc, LoginRegisterState>(
       listener: (context, state) {
         if (state is LoginRegisterFailure) {
+          Navigator.pop(context);
           Scaffold.of(context).showSnackBar(
             SnackBar(
               content: Text('${state.error}'),
